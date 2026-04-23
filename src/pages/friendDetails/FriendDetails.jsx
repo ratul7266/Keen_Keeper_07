@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import friendsData from "../../../public/friendsData.json";
+import friendsData from "../../data/friendsData.json";
 import {
   Phone,
   MessageCircle,
