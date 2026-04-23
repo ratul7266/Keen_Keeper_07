@@ -35,6 +35,7 @@ const FriendDetails = () => {
       state: { type, friend },
     });
   };
+  
   if (!friend) return <ErrorPage></ErrorPage>;
 
   return (
