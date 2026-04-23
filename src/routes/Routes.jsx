@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layout/MainLayout";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import HomePage from "../pages/friendDetails/homepage/HomePage";
-import Friends from "../pages/friendDetails/homepage/timeline/Timeline";
 import FriendDetails from "../pages/friendDetails/FriendDetails";
+import Timeline from "../pages/friendDetails/homepage/timeline/Timeline";
 
 export const router = createBrowserRouter([
   {
@@ -16,8 +16,8 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/friends",
-        element: <Friends />,
+        path: "/timeline",
+        element: <Timeline />,
       },
       {
         path: "/friendDetails/:id",

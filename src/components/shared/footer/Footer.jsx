@@ -36,12 +36,8 @@ const Footer = () => {
         </div>
       </div>
       <hr className="w-full border-white/20 my-6" />
-      <div
-        className="flex flex-col items-center gap-3 
-                      md:flex-row md:justify-between text-xs sm:text-sm"
-      >
+      <div className="flex flex-col items-center gap-3 md:flex-row md:justify-between text-xs sm:text-sm">
         <p>© 2026 KeenKeeper. All rights reserved.</p>
-
         <ul className="flex flex-col gap-2 md:flex-row md:gap-6">
           <li className="cursor-pointer hover:underline">Privacy Policy</li>
           <li className="cursor-pointer hover:underline">Terms of Service</li>
