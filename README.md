@@ -11,7 +11,7 @@ It allows users to track, organize, and visualize their activities/events in a c
 
 The project focuses on smooth UX, state management, and persistent data handling using LocalStorage. It is designed for productivity and personal activity tracking.
 
-Live Demo: https://sage-douhua-fd8442.netlify.app/timeline
+Live Link: https://keenkeeperweb07.netlify.app/
 
 ---
 
