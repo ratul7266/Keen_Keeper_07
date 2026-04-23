@@ -29,7 +29,7 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to={"/page-to-read"}
+          to={"/stats"}
           className={({ isActive }) =>
             `font-semibold mr-1 ${isActive ? "bg-green-800 border text-white" : ""}`
           }

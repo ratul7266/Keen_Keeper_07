@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import friendsData from "../../data/friendsData.json";
+import { toast } from "react-toastify";
 import {
   Phone,
   MessageCircle,
@@ -31,11 +32,14 @@ const FriendDetails = () => {
 
   const friend = friendsData.find((f) => f.id === Number(id));
   const handleAction = (type) => {
-    navigate("/timeline", {
-      state: { type, friend },
-    });
-  };
-  
+  toast.success(`${type} started`, {
+    icon: type === "Call" ? "📞" : type === "Text" ? "💬" : "🎥",
+  });
+
+  navigate("/timeline", {
+    state: { type, friend },
+  });
+};
   if (!friend) return <ErrorPage></ErrorPage>;
 
   return (
