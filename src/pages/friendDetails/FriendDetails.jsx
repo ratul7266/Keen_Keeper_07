@@ -10,6 +10,7 @@ import {
   Trash2,
 } from "lucide-react";
 import ErrorPage from "../../ErrorPage/ErrorPage";
+import { useNavigate } from "react-router";
 
 const iconMap = {
   Call: <Phone size={18} />,
@@ -26,12 +27,19 @@ const statusColor = {
 
 const FriendDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const friend = friendsData.find((f) => f.id === Number(id));
+  const handleAction = (type) => {
+    navigate("/timeline", {
+      state: { type, friend },
+    });
+  };
   if (!friend) return <ErrorPage></ErrorPage>;
 
   return (
-    <div className="bg-base-200 ">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 sm:p-4 lg:p-2 mx-auto max-w-7xl items-stretch">
+    <div className="bg-base-200 pb-42 pt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 sm:p-4 lg:p-2 mx-auto max-w-7xl items-stretch ">
         <div className="flex flex-col h-full justify-between">
           <div className="bg-white rounded-2xl p-4 sm:p-5 text-center space-y-3 shadow-sm">
             <img
@@ -65,7 +73,7 @@ const FriendDetails = () => {
               {friend.bio}
             </p>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 mt-8">
             <button className="btn w-full gap-2 text-sm">
               <Clock size={16} /> Snooze
             </button>
@@ -130,6 +138,7 @@ const FriendDetails = () => {
               {["Call", "Text", "Video"].map((type) => (
                 <button
                   key={type}
+                  onClick={() => handleAction(type)}
                   className="flex flex-col items-center justify-center gap-2 py-4 px-2 rounded-xl bg-gray-50 border border-gray-200 shadow-sm hover:shadow-md text-lg font-medium text-gray-700"
                 >
                   <span>{iconMap[type]}</span>
