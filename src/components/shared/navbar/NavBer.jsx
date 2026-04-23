@@ -1,6 +1,6 @@
 import { ChartLine, ChevronDown, Clock, House } from "lucide-react";
 import React from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const links = (
@@ -18,7 +18,7 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to={"/books"}
+          to={"/Timeline"}
           className={({ isActive }) =>
             `font-semibold mr-1 ${isActive ? "bg-green-800 border text-white" : ""}`
           }

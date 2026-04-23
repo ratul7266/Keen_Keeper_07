@@ -12,6 +12,11 @@ const Banner = () => {
   ).length;
   return (
     <div>
+
+
+
+
+      
       <div className="text-center bg-base-200 mx-auto rounded-2xl my-8 py-8">
         <h1 className="text-6xl font-bold">
           Friends to keep close in your life

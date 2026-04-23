@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Friends = () => {
+const Timeline = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Friends = () => {
     );
 };
 
-export default Friends;
+export default Timeline;
