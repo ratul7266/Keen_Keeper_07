@@ -16,12 +16,9 @@ const Timeline = () => {
     const saved = localStorage.getItem("timeline");
     return saved ? JSON.parse(saved) : [];
   });
-
   useEffect(() => {
     if (!friend || !type || hasAdded.current) return;
-
     hasAdded.current = true;
-
     setTimeline((prev) => {
       const updated = [
         {
@@ -32,7 +29,6 @@ const Timeline = () => {
         },
         ...prev,
       ];
-
       localStorage.setItem("timeline", JSON.stringify(updated));
       return updated;
     });
@@ -49,11 +45,9 @@ const Timeline = () => {
       <span className="text-gray-600">with {name}</span>
     </p>
   );
-
   return (
     <div className="bg-base-200 pb-96">
       <div className="mx-auto container">
-        {/* Header */}
         <div className="flex items-center justify-between py-4">
           <h2 className="text-4xl font-bold">Timeline</h2>
 
@@ -67,8 +61,6 @@ const Timeline = () => {
             Refresh
           </button>
         </div>
-
-        {/* Filter Dropdown */}
         <div className="dropdown dropdown-start mb-2">
           <div tabIndex={0} role="button" className="btn m-1">
             Filter Timeline <ChevronDown />
@@ -92,8 +84,6 @@ const Timeline = () => {
             </li>
           </ul>
         </div>
-
-        {/* Timeline List */}
         <div className="mt-6 space-y-3">
           {filteredTimeline.length === 0 && (
             <div className="flex flex-col items-center justify-center py-16 text-gray-400">
@@ -101,7 +91,6 @@ const Timeline = () => {
               <p className="text-sm">No activity yet</p>
             </div>
           )}
-
           {filteredTimeline.map((item) => (
             <div
               key={item.entryId}
@@ -117,7 +106,6 @@ const Timeline = () => {
                 }
                 className="w-10 h-10 object-contain"
               />
-
               <div>
                 {getActionText(item.action, item.name)}
                 <p className="text-xs text-gray-400">{item.date}</p>
